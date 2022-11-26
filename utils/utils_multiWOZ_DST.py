@@ -246,7 +246,7 @@ def read_langs(file_name, gating_dict, SLOTS, dataset, lang, mem_lang, sequicity
                (args["except_domain"] != "" and dataset != "test" and [args["except_domain"]] == dial_dict["domains"]): 
                 continue
                 
-            slot_temp = SLOTS
+#             slot_temp = SLOTS
             # Reading data
             for ti, turn in enumerate(dial_dict["dialogue"]):
                 turn_domain = turn["domain"]
@@ -258,7 +258,7 @@ def read_langs(file_name, gating_dict, SLOTS, dataset, lang, mem_lang, sequicity
                 turn_belief_dict = fix_general_label_error(turn["belief_state"], False, SLOTS)
 
                 # Generate domain-dependent slot list
-                slot_temp = SLOTS
+                global slot_temp = SLOTS
                 if dataset == "train" or dataset == "dev":
                     if args["except_domain"] != "":
                         slot_temp = [k for k in SLOTS if args["except_domain"] not in k]
