@@ -36,7 +36,7 @@ model = globals()[args['decoder']](
 # print("[Info] Unpointable Slots include ", gating_dict)
 
 # for epoch in range(200):
-for epoch in range(10):
+for epoch in range(1):
     print("Epoch:{}".format(epoch))  
     # Run the train function
     pbar = tqdm(enumerate(train),total=len(train))
