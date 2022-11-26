@@ -245,7 +245,8 @@ def read_langs(file_name, gating_dict, SLOTS, dataset, lang, mem_lang, sequicity
             if (args["except_domain"] != "" and dataset == "test" and args["except_domain"] not in dial_dict["domains"]) or \
                (args["except_domain"] != "" and dataset != "test" and [args["except_domain"]] == dial_dict["domains"]): 
                 continue
-
+                
+            slot_temp = SLOTS
             # Reading data
             for ti, turn in enumerate(dial_dict["dialogue"]):
                 turn_domain = turn["domain"]
